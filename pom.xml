@@ -8,14 +8,30 @@
     <artifactId>app</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>app with security</name>
+    <name>example app's</name>
     <url>http://maven.apache.org</url>
 
     <modules>
-        <module>model</module>
-        <module>dao</module>
-        <module>service</module>
-        <module>rest</module>
+        <module>contactManager</module>
     </modules>
+
+    <properties>
+        <javax.version>7.0</javax.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>contactManager</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>javax</groupId>
+                <artifactId>javaee-api</artifactId>
+                <version>${javax.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>
